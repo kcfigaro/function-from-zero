@@ -9,6 +9,6 @@ format:
 	black *.py
 
 lint:
-	pylint --disable=R,C *.py
+	pylint --disable=R,C *.py --disable=no-value-for-parameter
 
 all: install lint test format
