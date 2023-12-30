@@ -4,3 +4,5 @@ pytest-cov
 black
 wikipedia
 ipython
+click
+fire

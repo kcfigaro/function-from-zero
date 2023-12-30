@@ -1,9 +1,13 @@
-import wikipedia
+import click
+from mylib.bot import scrape
 
+@click.command()
+@click.option("--name", default="Sweden", help="Name")
+@click.option("--length", default=2, help="number of sentences.")
+def cli(name, length):
+    result = scrape(name, length)
+    click.echo(click.style(f'{result}', fg='green'))
 
-def scrape(name="Sweden", length=1):
-    result = wikipedia.summary(name, sentences=length)
-    return result
+if __name__ == '__main__':
+    cli()
 
-
-print(scrape("Amazon", 2))
