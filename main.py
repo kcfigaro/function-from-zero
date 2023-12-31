@@ -8,13 +8,16 @@ import uvicorn
 
 app = FastAPI()
 
+
 class Item(BaseModel):
     name: str
     length: int
 
+
 @app.get("/")
 def read_root():
     return {"Hello": "World"}
+
 
 @app.post("/scrape/")
 def scrape_wiki(item: Item):
